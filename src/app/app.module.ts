@@ -27,14 +27,36 @@ import { MatDialogModule} from '@angular/material/dialog';//dialog
 import { MatRadioModule} from '@angular/material/radio';//radio
 import { MatTabsModule} from '@angular/material/tabs';//tabs
 import { MatSelectModule} from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
+
 //router
 import { RouterModule } from '@angular/router';
 import { FormComponent } from './form/form.component';
+import { DepartmentComponent } from './department/department.component';
+import { JobtitleComponent } from './jobtitle/jobtitle.component';
+import { ScoretableComponent } from './scoretable/scoretable.component';
+import { SurveyComponent } from './survey/survey.component';
+import { DialogComponent } from './dialog/dialog.component';
+
+//primeng
+import {ButtonModule} from 'primeng/button';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
-    FormComponent
+    FormComponent,
+    DepartmentComponent,
+    JobtitleComponent,
+    ScoretableComponent,
+    SurveyComponent,
+    DialogComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -61,12 +83,32 @@ import { FormComponent } from './form/form.component';
     MatRadioModule,
     MatTabsModule,
     MatSelectModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    ButtonModule,
     RouterModule.forRoot([
       {path:"form",component:FormComponent}
+    ]),
+    RouterModule.forRoot([
+      {path:"department",component:DepartmentComponent}
+    ]),
+    RouterModule.forRoot([
+      {path:"jobtitle",component:JobtitleComponent}
+    ]),
+    RouterModule.forRoot([
+      {path:"scoretable",component:ScoretableComponent}
+    ]),
+    RouterModule.forRoot([
+      {path:"survey",component:SurveyComponent}
+    ]),
+    RouterModule.forRoot([
+      {path:"dialog",component:DialogComponent}
     ]),
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogComponent]
+
 })
 export class AppModule { }

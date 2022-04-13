@@ -32,6 +32,29 @@
     <div class="col-lg-12">
       <mat-card>
         <h2  class="card-title" >學生成績</h2>
+        <mat-card-actions>
+          <h1><button mat-raised-button color="primary"  (click)="openDialog()"><mat-icon>add</mat-icon></button></h1>
+        </mat-card-actions>
+        <mat-form-field appearance="outline">
+          <mat-label>科目</mat-label>
+          <mat-select>
+            <mat-option value="one">統計學</mat-option>
+            <mat-option value="two">資料庫管理</mat-option>
+            <mat-option value="three">實用英文</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+         <mat-form-field appearance="fill">
+          <mat-label>期中成績</mat-label>
+          <input matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>期末成績</mat-label>
+          <input matInput>
+        </mat-form-field>
+
+
       </mat-card>
     </div>
   </div>

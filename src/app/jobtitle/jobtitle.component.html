@@ -1,0 +1,152 @@
+<div class="row">
+  <div class="row text-center">
+    <div class="col">
+    <h1>記事本</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+<mat-card>
+    <mat-tab-group mat-tabs>
+      <mat-tab label="日期">
+        <p> <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+       <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </p>
+
+       <p> <button mat-raised-button (click)="picker.open()">Open</button></p>
+
+       <mat-form-field appearance="fill">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker2">
+          <input matStartDate placeholder="Start date">
+          <input matEndDate placeholder="End date">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker2></mat-date-range-picker>
+      </mat-form-field>
+
+
+
+      </mat-tab>
+      <mat-tab label="代辦事項"><mat-card>
+
+        <mat-selection-list #daily>
+          <mat-list-option *ngFor="let daily of typesOfDaily">
+            {{daily}}
+          </mat-list-option>
+        </mat-selection-list>
+
+        <p>
+          Options selected: {{daily.selectedOptions.selected.length}}
+        </p>
+
+    <section class="example-section">
+      <mat-checkbox class="example-margin" (ngModel)="checked">check</mat-checkbox>
+      <mat-checkbox class="example-margin" (ngModel)="indeterminate">check</mat-checkbox>
+    </section>
+
+
+    <mat-card-actions class="row text-center">
+      <h1><button mat-raised-button color="primary"  (click)="openDialog()"><mat-icon>add</mat-icon></button></h1>
+    </mat-card-actions>
+</mat-card>
+
+</mat-tab>
+
+      <mat-tab label="買菜清單">
+        <mat-list role="list">
+          <mat-list-item role="listitem">大蔥
+            <mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            step="1"
+            min="0"
+            max="10"
+            aria-label="units"></mat-slider>根
+          </mat-list-item>
+          <mat-list-item role="listitem">牛肉
+            <mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="100"
+            step="100"
+            min="0"
+            max="1000"
+            aria-label="units"></mat-slider>g
+          </mat-list-item>
+          <mat-list-item role="listitem">番茄
+            <mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            step="1"
+            min="0"
+            max="10"
+            aria-label="units"></mat-slider>顆
+          </mat-list-item>
+          <mat-list-item role="listitem">高麗菜
+            <mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            step="1"
+            min="0"
+            max="10"
+            aria-label="units"></mat-slider>顆
+          </mat-list-item>
+          <mat-list-item role="listitem">蝦子
+            <mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="100"
+            step="100"
+            min="0"
+            max="1000"
+            aria-label="units"></mat-slider>g
+          </mat-list-item>
+          <mat-list-item role="listitem">蒜頭
+            <mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            step="1"
+            min="0"
+            max="10"
+            aria-label="units"></mat-slider>顆
+          </mat-list-item>
+          <mat-list-item role="listitem">雞蛋
+          <mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            step="1"
+            min="0"
+            max="10"
+            aria-label="units"></mat-slider>顆
+          </mat-list-item>
+          <mat-list-item role="listitem">豆腐<mat-slider
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1"
+            step="1"
+            min="0"
+            max="10"
+            aria-label="units"></mat-slider>塊</mat-list-item>
+        </mat-list>
+    </mat-tab>
+
+    </mat-tab-group>
+
+
+  </mat-card>
+
+</div>
+</div>
+

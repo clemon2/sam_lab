@@ -33,6 +33,20 @@
     <span>成績系統</span>
     <div class="spacer"></div>
 
+    <button mat-icon-button [matMenuTriggerFor]="messageMenu" #menuTrigger="matMenuTrigger">
+      <mat-icon>message</mat-icon>
+    </button>
+
+    <!-- <mat-menu #messageMenu="matMenu">
+      <button mat-menu-item>{{menuItem[0].content}}</button>
+      <button mat-menu-item>{{menuItem[1].content}}</button>
+    </mat-menu> -->
+    <mat-menu #messageMenu="matMenu">
+      <!-- 沒for的<button mat-menu-item>{{menuItem[0].content}}</button> -->
+      <!-- <button mat-menu-item *ngFor="let item of  menuItem_content">{{item}}</button> -->
+     <button mat-menu-item *ngFor="let item of menuItem"routerLink="{{item.rounter}}">{{item.content}}</button>
+    </mat-menu>
+
   </mat-toolbar >
   <mat-sidenav-container class="demo-container">
     <mat-sidenav #sideNav mode="side" class="demo-sidenav">
@@ -53,9 +67,18 @@
           <div mat-line>部門</div>
         </mat-list-item>
 
-        <mat-list-item mat-list-item routerLink="position" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <mat-list-item mat-list-item routerLink="jobtitle" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
           <mat-icon mat-list-icon>people</mat-icon>
           <div mat-line>職稱</div>
+        </mat-list-item>
+
+        <mat-list-item mat-list-item routerLink="scoretable" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <mat-icon mat-list-icon>people</mat-icon>
+          <div mat-line>學生表單</div>
+        </mat-list-item>
+        <mat-list-item mat-list-item routerLink="survey" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <mat-icon mat-list-icon>people</mat-icon>
+          <div mat-line>調查頁面</div>
         </mat-list-item>
 
       </mat-list>
