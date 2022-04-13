@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { HttpClientModule } from '@angular/common/http';
 //material
 import { MatSliderModule } from '@angular/material/slider';//加入material
 import { MatMenuModule} from '@angular/material/menu';//menu
@@ -31,6 +32,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
+
 //router
 import { RouterModule } from '@angular/router';
 import { FormComponent } from './form/form.component';
@@ -42,6 +44,9 @@ import { DialogComponent } from './dialog/dialog.component';
 
 //primeng
 import {ButtonModule} from 'primeng/button';
+import { PrimengComponent } from './primeng/primeng.component';
+import { GetTableComponent } from './get-table/get-table.component';
+
 
 
 @NgModule({
@@ -54,6 +59,8 @@ import {ButtonModule} from 'primeng/button';
     ScoretableComponent,
     SurveyComponent,
     DialogComponent,
+    PrimengComponent,
+    GetTableComponent,
 
 
 
@@ -86,6 +93,11 @@ import {ButtonModule} from 'primeng/button';
     MatNativeDateModule,
     MatDatepickerModule,
     ButtonModule,
+    HttpClientModule ,
+
+
+
+
     RouterModule.forRoot([
       {path:"form",component:FormComponent}
     ]),
@@ -104,6 +116,13 @@ import {ButtonModule} from 'primeng/button';
     RouterModule.forRoot([
       {path:"dialog",component:DialogComponent}
     ]),
+    RouterModule.forRoot([
+      {path:"primeng",component:PrimengComponent}
+    ]),
+    RouterModule.forRoot([
+      {path:"get-table",component:GetTableComponent,}
+    ]),
+
 
   ],
   providers: [],
