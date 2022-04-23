@@ -12,20 +12,19 @@ export class GetTableComponent implements OnInit {
   @ViewChild('paginator') paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(  private ApiService: ApiService,) { }
+  constructor( private HttpApi: ApiService,) { }
   PDataSource = new MatTableDataSource();
   Col=['code','type','p_name'] //欄位
   PData:any//接資料的表格變數
 
 
   ngOnInit(): void {
-    this.getAllUser()
+    this.getAllProject()
   }
   totalCount:any;
-  getAllUser(): void {
-    this.ApiService.getProjectRequest(1,10)
+  getAllProject(): void {
+    this.HttpApi.getProjectRequest(1,10)
     .subscribe(Request => {
-       console.log(Request)
         this.PData = Request.body.project
         console.log(this.PData)
         console.log(Request.boby.total)

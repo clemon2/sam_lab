@@ -46,6 +46,8 @@ import { DialogComponent } from './dialog/dialog.component';
 import {ButtonModule} from 'primeng/button';
 import { PrimengComponent } from './primeng/primeng.component';
 import { GetTableComponent } from './get-table/get-table.component';
+import { Api2Component } from './api2/api2.component';
+
 
 
 
@@ -61,6 +63,8 @@ import { GetTableComponent } from './get-table/get-table.component';
     DialogComponent,
     PrimengComponent,
     GetTableComponent,
+    Api2Component,
+
 
 
 
@@ -121,6 +125,9 @@ import { GetTableComponent } from './get-table/get-table.component';
     ]),
     RouterModule.forRoot([
       {path:"get-table",component:GetTableComponent,}
+    ]),
+    RouterModule.forRoot([
+      {path:"api2",component:Api2Component,}
     ]),
 
 
